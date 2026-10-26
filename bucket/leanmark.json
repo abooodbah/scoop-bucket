@@ -1,0 +1,40 @@
+{
+    "version": "0.4.2",
+    "description": "Read-only Markdown viewer with offline Mermaid rendering",
+    "homepage": "https://abooodbah.github.io/leanmark/",
+    "license": "MIT",
+    "notes": [
+        "LeanMark needs the Microsoft Edge WebView2 Runtime, which ships with Windows 11 and current Windows 10.",
+        "Settings (theme, zoom) are kept in the registry under HKCU\\Software\\LeanMark and the WebView2 profile under",
+        "%LOCALAPPDATA%\\LeanMark. Both live outside the Scoop folder: they survive updates and stay after uninstall."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/abooodbah/leanmark/releases/download/v0.4.2/LeanMark-v0.4.2-windows-x64.zip",
+            "hash": "049a0a5240ccc6e9cf0fda3ff957d82efe47fd0c17d7a12530706b248ee07e2d",
+            "extract_dir": "LeanMark-v0.4.2-windows-x64"
+        }
+    },
+    "pre_install": "Remove-Item \"$dir\\installer\", \"$dir\\INSTALL.txt\" -Recurse -ErrorAction SilentlyContinue",
+    "bin": "LeanMark.exe",
+    "shortcuts": [
+        [
+            "LeanMark.exe",
+            "LeanMark"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/abooodbah/leanmark"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/abooodbah/leanmark/releases/download/v$version/LeanMark-v$version-windows-x64.zip",
+                "extract_dir": "LeanMark-v$version-windows-x64"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
