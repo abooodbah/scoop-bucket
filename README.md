@@ -1,12 +1,13 @@
 # Lean apps Scoop bucket
 
-Scoop manifests for three free, read-only viewers for Windows:
+Scoop manifests for four free, read-only viewers for Windows:
 
 | App | What it opens | Command |
 | --- | --- | --- |
 | [LeanMark](https://github.com/abooodbah/leanmark) | Markdown files | `leanmark` |
 | [LeanDoc](https://github.com/abooodbah/leandoc) | Word documents | `leandoc` |
 | [LeanRows](https://github.com/abooodbah/leanrows) | Large CSV, TSV, JSON Lines and log files | `leanrows` |
+| [LeanSlides](https://github.com/abooodbah/leanslides) | Presentations (.pptx, .ppsx, .potx, and macro-enabled files without running macros) | `leanslides` |
 
 ## Install
 
@@ -15,9 +16,10 @@ scoop bucket add lean https://github.com/abooodbah/scoop-bucket
 scoop install lean/leanmark
 scoop install lean/leandoc
 scoop install lean/leanrows
+scoop install lean/leanslides
 ```
 
-LeanMark and LeanDoc need the Microsoft Edge WebView2 Runtime, which Windows 11
+LeanMark, LeanDoc and LeanSlides need the Microsoft Edge WebView2 Runtime, which Windows 11
 includes. On Windows 10, install it with `scoop install extras/webview2-runtime`
 if it is missing.
 
